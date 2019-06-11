@@ -41,7 +41,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   if ENV["KONG_VERSION"]
     version = ENV["KONG_VERSION"]
   else
-    version = "1.1.2"
+    version = "1.2.0"
   end
 
   if ENV["KONG_CASSANDRA"]
@@ -81,7 +81,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.provider :virtualbox do |vb|
-    vb.name = "vagrant_kong_graphql-depth-limit"
+    vb.name = "vagrant_kong"
     vb.memory = memory
     vb.cpus = cpus
     vb.customize ["guestproperty", "set", :id, "/VirtualBox/GuestAdd/VBoxService/ — timesync-set-threshold", 10000]
